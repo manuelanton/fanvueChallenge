@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Post, Comment } from "../types/feed";
+import { Box } from "@mui/material";
+import React, { useState } from "react";
+import { Comment } from "../types/feed";
 
 const Comments = ({ comments }: { comments: Comment[] }) => {
   const [expanded, setExpanded] = useState(false);
@@ -14,8 +15,11 @@ const Comments = ({ comments }: { comments: Comment[] }) => {
       {expanded &&
         comments.map((comment) => {
           return (
-            <div>
-              <h5>{comment.name}</h5>;<p>{comment.body}</p>
+            <div key={comment.id}>
+              <h6>
+                {comment.name} <i>{comment.email}</i>
+              </h6>
+              <p>{comment.body}</p>
             </div>
           );
         })}

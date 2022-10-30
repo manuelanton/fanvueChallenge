@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Post, Comment } from "../types/feed";
 import Comments from "../components/comments";
@@ -38,19 +38,20 @@ const Feed: NextPage = () => {
     });
   }, []);
 
-  return posts.map((post: Post) => (
-    <Box
-      key={post.id}
-      sx={{
-        width: 300,
-        height: 300,
-      }}
-    >
-      <h3>{post.title}</h3>
-      <p>{post.body}</p>
-      <Comments comments={post.comments} />
+  return (
+    <Box alignItems="center" justifyContent="center">
+      {posts.map((post: Post) => (
+        <div key={post.id}>
+          <h3>
+            <b>{post.title}</b>
+          </h3>
+          <p>{post.body}</p>
+          <Comments comments={post.comments} />
+        </div>
+      ))}
+      ;
     </Box>
-  ));
+  );
 };
 
 export default Feed;
