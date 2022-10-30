@@ -15,7 +15,7 @@ const Comments = ({ comments }: { comments: Comment[] }) => {
         comments.map((comment) => {
           return (
             <div>
-              <h5>{comment.name}</h5>;<p>{comment.body}</p>{" "}
+              <h5>{comment.name}</h5>;<p>{comment.body}</p>
             </div>
           );
         })}
