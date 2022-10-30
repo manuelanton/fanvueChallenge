@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from "@mui/material";
 import { NextPage } from "next";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { Photo } from "../types/vault";
 
@@ -26,6 +27,10 @@ const Vault: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title> Fanvue</title>
+        <link rel="icon" href="https://www.fanvue.com/logo512.png" />
+      </Head>
       <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
         {pictures.map((picture) => (
           <ImageListItem

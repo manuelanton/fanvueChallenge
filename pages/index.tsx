@@ -7,7 +7,8 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title></title>
+        <title> Fanvue</title>
+        <link rel="icon" href="https://www.fanvue.com/logo512.png" />
       </Head>
       <main>
         <Box textAlign={"center"} my={8}>

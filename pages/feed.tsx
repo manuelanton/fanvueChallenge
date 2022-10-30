@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Post } from "../types/feed";
 import Comments from "../components/comments";
+import Head from "next/head";
 
 const Feed: NextPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -39,18 +40,24 @@ const Feed: NextPage = () => {
   }, []);
 
   return (
-    <Box alignItems="center" justifyContent="center">
-      {posts.map((post: Post) => (
-        <div key={post.id}>
-          <h3>
-            <b>{post.title}</b>
-          </h3>
-          <p>{post.body}</p>
-          <Comments comments={post.comments} />
-        </div>
-      ))}
-      ;
-    </Box>
+    <>
+      <Head>
+        <title> Fanvue</title>
+        <link rel="icon" href="https://www.fanvue.com/logo512.png" />
+      </Head>
+      <Box alignItems="center" justifyContent="center">
+        {posts.map((post: Post) => (
+          <div key={post.id}>
+            <h3>
+              <b>{post.title}</b>
+            </h3>
+            <p>{post.body}</p>
+            <Comments comments={post.comments} />
+          </div>
+        ))}
+        ;
+      </Box>
+    </>
   );
 };
 
