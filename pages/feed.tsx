@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Post, Comment } from "../types/feed";
+import { Post } from "../types/feed";
 import Comments from "../components/comments";
 
 const Feed: NextPage = () => {
